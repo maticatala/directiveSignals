@@ -1,0 +1,37 @@
+<h1>Agregar producto</h1>
+<hr>
+
+<form [formGroup]="myform">
+
+  <div class="row g-3 align-items-center mb-3">
+
+    <div class="col-auto">
+      <label>Nombre:</label>
+    </div>
+
+    <div class="col-auto">
+      <input formControlName="name" type="text" class="form-control" [ngClass]="{'border border-success': myform.get('name')!.valid}">
+    </div>
+
+    <div class="col-auto">
+      <div class="alert alert-danger d-flex align-items-center" role="alert" customLabel [isDirty]="myform.get('name')?.dirty" [errors]="myform.get('name')?.errors" >
+        <div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+
+      <div class="btn btn-primary" (click)="changeColor()">
+        Cambiar color
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
